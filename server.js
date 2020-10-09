@@ -12,7 +12,8 @@ mongoose.connect(
     process.env.DB_URI,
     { 
         useNewUrlParser: true ,
-        useUnifiedTopology: true
+        useUnifiedTopology: true,
+        useCreateIndex: true
     },
     (error) =>{
         if (error) console.error(error);

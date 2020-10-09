@@ -7,10 +7,8 @@ const getKey = async () => {
     const usedKey = new UsedKey({
         key
     })
-    await usedKey.save((err) => {
-        if (err) throw err
-    })
-    
+    await usedKey.save()
+
     return key
 }
 
@@ -19,9 +17,7 @@ const insertKey = async (data) => {
         key: data
     })
 
-    key.save((err) => {
-        if (err) throw err
-    })
+    await key.save()
 
     return key
 }

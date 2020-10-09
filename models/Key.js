@@ -4,7 +4,8 @@ const mongoose = require('mongoose')
 const keySchema = mongoose.Schema({
     key: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     }
 })
 
