@@ -16,7 +16,8 @@ router.post('/', async (req, res) => {
 
         const url = new UrlModel({
             url: body.url,
-            shortUrl: shortenedUrl
+            shortUrl: shortenedUrl,
+            key
         })
 
         await url.save((error) => {
