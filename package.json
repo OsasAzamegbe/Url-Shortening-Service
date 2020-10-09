@@ -1,0 +1,12 @@
+{
+  "name": "url-shortening-service",
+  "version": "1.0.0",
+  "description": "Creating the backend of a **URL SHORTENER** that takes urls and gives users shortened versions for easier use.",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "author": "Osas Azamegbe",
+  "license": "ISC"
+}
