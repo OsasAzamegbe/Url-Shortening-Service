@@ -11,8 +11,9 @@ router.post('/', async (req, res) => {
     try{
 
         const hostName = req.headers.host
-        const key = await getKey()
-        const shortenedUrl = `${hostName}/${key.key}`
+        const keyObj = await getKey()
+        const key = keyObj.key
+        const shortenedUrl = `${hostName}/${key}`
 
         const url = new UrlModel({
             url: body.url,
