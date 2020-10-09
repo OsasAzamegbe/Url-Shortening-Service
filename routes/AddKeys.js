@@ -3,10 +3,10 @@ const router = require('express').Router()
 const {insertKey} = require('../keyGenService/KeyGen')
 
 
-router.post('/', async (req, res) => {
+router.post('/',  (req, res) => {
     body = req.body
 
-    body.keys.forEach(keyObj => {
+    body.keys.forEach( async (keyObj) => {
 
         try{
             const key = keyObj.key
