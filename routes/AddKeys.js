@@ -3,20 +3,17 @@ const router = require('express').Router()
 const {insertKey} = require('../keyGenService/KeyGen')
 
 
-router.post('/',  (req, res) => {
-    body = req.body
+router.post('/', async (req, res) => {
+    const body = req.body
 
-    body.keys.forEach( async (keyObj) => {
+    try{
+        const keys = body.keys
+        await insertKey(keys)
+        res.status(201).json({message: "keys inserted successfully!"})
 
-        try{
-            const key = keyObj.key
-            const insertedKey = await insertKey(key)
-            res.status(201).json({insertedKey})
-    
-        } catch (error) {
-            res.status(400).json({message: "Bad Request"})
-        }
-    });
+    } catch (error) {
+        res.status(400).json({message: "Bad Request"})
+    }
 })
 
 module.exports = router

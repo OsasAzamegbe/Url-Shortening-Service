@@ -12,14 +12,10 @@ const getKey = async () => {
     return key
 }
 
-const insertKey = async (data) => {
-    const key = new Key({
-        key: data
-    })
-
-    await key.save()
-
-    return key
+const insertKey = (data) => {
+    Key.insertMany(
+        data
+    )
 }
 
 

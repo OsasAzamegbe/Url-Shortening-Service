@@ -6,7 +6,7 @@ const UrlModel = require('../models/Url')
 
 
 router.post('/', async (req, res) => {
-    body = req.body
+    const body = req.body
 
     try{
 
