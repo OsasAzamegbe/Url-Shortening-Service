@@ -10,6 +10,11 @@ const urlSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    key: {
+        type: String,
+        required: true,
+        unique: true
+    },
     dateCreated: {
         type: Date,
         default: Date.now
