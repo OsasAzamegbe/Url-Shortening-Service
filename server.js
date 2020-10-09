@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 dotenv.config();
+const bodyParser = require('body-parser')
 
 const apiRoute = require('./routes/Api')
 
@@ -36,6 +37,8 @@ mongoose.connect(
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+//middleware
+app.use(bodyParser.json())
 
 //routes
 app.get('/', (req, res) => {

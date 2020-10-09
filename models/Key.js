@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 
-const keySchema = moongoose.Schema({
+const keySchema = mongoose.Schema({
     key: {
         type: String,
         required: true
