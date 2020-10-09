@@ -1,10 +1,10 @@
 const router = require('express').Router()
 
+const shortenUrlRoute = require('./ShortenUrl')
 
 
-router.post('/', (req, res) => {
-    res.json({"welcome to the api route"})
-})
+
+router.use('/shorten', shortenUrlRoute)
 
 
 
