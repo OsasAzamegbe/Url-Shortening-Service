@@ -1,22 +1,9 @@
 const router = require('express').Router()
 
-const {insertKey, getKey} = require('../keyGenService/KeyGen')
+const {getKey} = require('../keyGenService/KeyGen')
 const UrlModel = require('../models/Url')
 
 
-
-router.post('/addkeys', async (req, res) => {
-    body = req.body
-
-    try{
-        const key = await insertKey(body.key)
-        res.status(201).json({key})
-
-    } catch (error) {
-        res.status(500).json({message: "Internal Server Error"})
-    }
-    
-})
 
 router.post('/', async (req, res) => {
     body = req.body
@@ -44,16 +31,5 @@ router.post('/', async (req, res) => {
     
 })
 
-router.get('/', async (req, res) => {
-
-    try{
-        const key = await getKey()
-        res.json({key})
-
-    } catch (error) {
-        res.status(500).json({message: "Internal Server Error"})
-    }
-    
-})
 
 module.exports = router
