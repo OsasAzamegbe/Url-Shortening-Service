@@ -43,4 +43,14 @@ router.post('/', async (req, res) => {
 })
 
 
+router.get('/', async(req, res) => {
+    try{
+        const urls = await UrlModel.find({user_id: req.user._id})
+        res.json({urls})
+    } catch (error) {
+        res.status(500).json({error: "Internal Server Error"})
+    }
+})
+
+
 module.exports = router
