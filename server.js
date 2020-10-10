@@ -6,6 +6,8 @@ const bodyParser = require('body-parser')
 
 const apiRoute = require('./routes/apiRoutes/Api')
 const redirectRoute = require('./routes/Redirect')
+const registerRoute = require('./routes/Register')
+const loginRoute = require('./routes/Login')
 
 
 //DB
@@ -44,8 +46,9 @@ app.use(bodyParser.json())
 
 //routes
 app.use('/', redirectRoute)
-
 app.use('/api/v1', apiRoute)
+app.use('/register', registerRoute)
+app.use('/login', loginRoute)
 
 
 app.listen(PORT, () => {console.log('Server started...')});
