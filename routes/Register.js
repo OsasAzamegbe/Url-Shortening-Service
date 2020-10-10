@@ -9,10 +9,17 @@ router.post('/', async (req, res) => {
     const body = req.body
 
     try{
+        
         //Validate Login data
         const {error} = registerValidation(body)
         if (error) {
             return res.status(400).json({"validation error" : error.details[0].message})
+        }
+
+        //check if email is unique
+        const emailExists = await User.findOne({email: body.email})
+        if(emailExists){
+            return res.status(400).json({"error": "An account with this email address already exists."})
         }
 
         const encryptedPassword = await encryptPassword(body.password)
@@ -22,9 +29,7 @@ router.post('/', async (req, res) => {
             password: encryptedPassword
         })
 
-        const newUser = await user.save((error) => {
-            if (error) console.log(error)
-        })
+        const newUser = await user.save()
 
         res.status(201).json({
             userCreated: true,
