@@ -1,7 +1,7 @@
 const router = require('express').Router()
 
-const {getKey} = require('../keyGenService/KeyGen')
-const UrlModel = require('../models/Url')
+const {getKey} = require('../../keyGenService/KeyGen')
+const UrlModel = require('../../models/Url')
 
 
 

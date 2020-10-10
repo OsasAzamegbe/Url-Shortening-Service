@@ -4,7 +4,8 @@ const dotenv = require('dotenv');
 dotenv.config();
 const bodyParser = require('body-parser')
 
-const apiRoute = require('./routes/Api')
+const apiRoute = require('./routes/apiRoutes/Api')
+const redirectRoute = require('./routes/Redirect')
 
 
 //DB
@@ -21,7 +22,7 @@ mongoose.connect(
         const dbStatus = mongoose.connection.readyState;
         switch(dbStatus){
             case 0:
-                console.log("Database discconected!");
+                console.log("Database disconected!");
                 break;
             case 1:
                 console.log("Database Connected!");
@@ -42,9 +43,7 @@ const PORT = process.env.PORT || 5000;
 app.use(bodyParser.json())
 
 //routes
-app.get('/', (req, res) => {
-    res.send("Welcome to the home route.");
-})
+app.use('/', redirectRoute)
 
 app.use('/api/v1', apiRoute)
 

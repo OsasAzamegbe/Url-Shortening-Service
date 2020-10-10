@@ -1,6 +1,6 @@
 const router = require('express').Router()
 
-const {insertKey} = require('../keyGenService/KeyGen')
+const {insertKey} = require('../../keyGenService/KeyGen')
 
 
 router.post('/', async (req, res) => {
