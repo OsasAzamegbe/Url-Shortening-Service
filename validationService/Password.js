@@ -9,7 +9,7 @@ const encryptPassword = async (password) => {
 }
 
 const validatePassword = async (password, encryptedPassword) => {
-    const valid = await bcrypt.compare(password, encryptPassword)
+    const valid = await bcrypt.compare(password, encryptedPassword)
 
     return valid
 }
