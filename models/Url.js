@@ -15,6 +15,10 @@ const urlSchema = mongoose.Schema({
         required: true,
         unique: true
     },
+    user_id:{
+        type: Object,
+        required: true
+    },
     dateCreated: {
         type: Date,
         default: Date.now
