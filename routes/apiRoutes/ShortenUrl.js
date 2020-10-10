@@ -36,7 +36,7 @@ router.post('/', async (req, res) => {
         res.status(201).json({url})
 
     } catch (error) {
-        res.status(500).json({message: "Internal Server Error"})
+        res.status(500).json({error: "Internal Server Error"})
     }
     
 })
