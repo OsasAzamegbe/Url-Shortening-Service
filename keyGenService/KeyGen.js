@@ -3,13 +3,14 @@ const UsedKey = require('../models/UsedKeys')
 
 
 const getKey = async () => {
-    const key = await Key.findOneAndDelete()
+    const keyObj = await Key.findOneAndDelete()
+    const key = keyObj.key
     const usedKey = new UsedKey({
         key
     })
     await usedKey.save()
 
-    return key
+    return keyObj
 }
 
 const insertKey = (data) => {
