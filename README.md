@@ -11,4 +11,4 @@ To run this project locally:
 4. Open your browser window and go to "localhost:${PORT}" to view the project. For example, with your PORT as 5000, enter "localhost:5000" in your browser window.
 
 
-![Url-Shortening-Service-System-desing System-design]("/System design.png")
+![Url-Shortening-Service-System-desing System-design]("/design.png")
