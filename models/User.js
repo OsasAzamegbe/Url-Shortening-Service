@@ -19,6 +19,10 @@ const userSchema = mongoose.Schema({
         min: 8,
         max: 2048
     },
+    admin: {
+        type: Boolean,
+        default: false
+    },
     created_at: {
         type: Date,
         default: Date.now

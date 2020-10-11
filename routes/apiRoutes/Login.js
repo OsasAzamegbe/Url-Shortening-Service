@@ -1,9 +1,9 @@
 const router = require('express').Router()
 const jwt = require('jsonwebtoken')
 
-const User = require('../models/User')
-const {validatePassword} = require('../validationService/Password')
-const {loginValidation} = require('../validationService/RequestValidation')
+const User = require('../../models/User')
+const {validatePassword} = require('../../validationService/Password')
+const {loginValidation} = require('../../validationService/RequestValidation')
 
 
 router.post('/', async (req, res) => {
