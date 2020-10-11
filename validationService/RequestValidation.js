@@ -11,9 +11,8 @@ const validateShortenBody = (data) => {
 
 const validateAddKeysBody = (data) => {
     const schema = Joi.object({
-        keys: Joi.array().items({
-            key: Joi.string().min(6).max(6).required()
-        }).required()
+        length: Joi.number().required(),
+        size: Joi.number().required()
     })
 
     return schema.validate(data)

@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken')
+const User = require('../models/User')
 
 
 const validateToken = (req, res, next) => {
@@ -13,4 +14,16 @@ const validateToken = (req, res, next) => {
     }
 }
 
-module.exports = validateToken
+const validateAdmin = async (req, res, next) => {
+    try{
+        const credentials = req.user
+        const user = await User.findById(credentials._id)        
+        if (!user.admin) throw "Not an Admin"
+        next()
+
+    } catch (error) {
+        res.status(401).json({error: "errorrrrr"})
+    }
+}
+
+module.exports = {validateToken, validateAdmin}

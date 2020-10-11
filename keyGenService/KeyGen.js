@@ -13,11 +13,18 @@ const getKey = async () => {
     return keyObj
 }
 
-const insertKey = (data) => {
-    Key.insertMany(
-        data
-    )
+const insertKey = async (data) => {
+    const inserted = await Key.insertMany(data)
+    return inserted
 }
 
 
-module.exports = {insertKey, getKey}
+const clearKeysDb = async () => {
+    const deletedKeys = await Key.deleteMany({})
+    const deletedUsedKeys = await UsedKey.deleteMany({})
+
+    return {deletedKeys, deletedUsedKeys}
+}
+
+
+module.exports = {insertKey, getKey, clearKeysDb}

@@ -1,8 +1,8 @@
 const router = require('express').Router()
 
-const User = require('../models/User')
-const {encryptPassword} = require('../validationService/Password')
-const {registerValidation} = require('../validationService/RequestValidation')
+const User = require('../../models/User')
+const {encryptPassword} = require('../../validationService/Password')
+const {registerValidation} = require('../../validationService/RequestValidation')
 
 
 router.post('/', async (req, res) => {
