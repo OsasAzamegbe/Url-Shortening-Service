@@ -20,4 +20,10 @@ const insertKey = (data) => {
 }
 
 
-module.exports = {insertKey, getKey}
+const clearKeyDb = () => {
+    Key.deleteMany({})
+    UsedKey.deleteMany({})
+}
+
+
+module.exports = {insertKey, getKey, clearKeyDb}
