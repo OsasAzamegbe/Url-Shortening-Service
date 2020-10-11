@@ -10,6 +10,7 @@ To run this project locally:
 3. Run the command "npm run dev" in your CLI to start th development server (Ensure Node has been installed on your system first).
 4. Open your browser window and go to "localhost:${PORT}" to view the project. For example, with your PORT as 5000, enter "localhost:5000" in your browser window.
 
-
-![Url-Shortening-Service-System-design System-design](/design.png)
-**System design for Url-Shortening service**
+<p align="center">
+  <img src="/design.png" alt="System design for Url-Shortening service">
+<strong>System design for Url-Shortening service</strong>
+</p>
