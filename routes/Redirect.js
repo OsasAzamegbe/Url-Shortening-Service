@@ -12,7 +12,7 @@ router.get('/:key', async (req, res) => {
         res.redirect(307, longUrl)
 
     } catch (error) {
-        res.status(404).json({error: 'Resource Not Found'})
+        res.status(404).json({message: 'Resource Not Found'})
     }
 })
 

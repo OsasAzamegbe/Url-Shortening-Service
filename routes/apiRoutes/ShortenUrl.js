@@ -12,7 +12,7 @@ router.post('/', async (req, res) => {
     //validate body
     const {error} = validateShortenBody(body)
     if (error) {
-        return res.status(400).json({error: error.details[0].message})
+        return res.status(400).json({message: error.details[0].message})
     }
 
     
@@ -34,10 +34,13 @@ router.post('/', async (req, res) => {
             if (error) console.log(error)
         })
 
-        res.status(201).json({url})
+        res.status(201).json({
+            url,
+            message: "URL shortened successfully"
+        })
 
     } catch (error) {
-        res.status(500).json({error: "Internal Server Error"})
+        res.status(500).json({message: "Internal Server Error"})
     }
     
 })
@@ -48,7 +51,7 @@ router.get('/', async(req, res) => {
         const urls = await UrlModel.find({user_id: req.user._id})
         res.json({urls})
     } catch (error) {
-        res.status(500).json({error: "Internal Server Error"})
+        res.status(500).json({message: "Internal Server Error"})
     }
 })
 

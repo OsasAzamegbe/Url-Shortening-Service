@@ -15,7 +15,7 @@ router.post('/', async (req, res) => {
         //validate body
         const {error} = validateAddKeysBody(body)
         if (error) {
-            return res.status(400).json({error: error.details[0].message})
+            return res.status(400).json({message: error.details[0].message})
         }
 
         //clear Keys and UsedKeys DB
@@ -24,7 +24,7 @@ router.post('/', async (req, res) => {
         const notEmptyUsedKeys = await UsedKeys.countDocuments()
         if(notEmptyKeys || notEmptyUsedKeys) {
             console.log(notEmptyKeys, notEmptyUsedKeys)
-            return res.status(500).json({error: "Database couldn't be cleared"})
+            return res.status(500).json({message: "Database couldn't be cleared"})
         }
 
         //generate keys
@@ -37,7 +37,7 @@ router.post('/', async (req, res) => {
         res.status(201).json({message: "Keys inserted successfully", inserted: inserted.length})
 
     } catch (error) {
-        res.status(400).json({error: "Bad Request"})
+        res.status(400).json({message: "Bad Request"})
     }
 })
 

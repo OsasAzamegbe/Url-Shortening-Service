@@ -13,19 +13,19 @@ router.post('/', async (req, res) => {
         //Validate Login data
         const {error} = loginValidation(body)
         if (error) {
-            return res.status(400).json({"validation error" : error.details[0].message})
+            return res.status(400).json({message : error.details[0].message})
         }
 
         //get user
         const user = await User.findOne({email: body.email})
         if (!user) {
-            return res.status(400).json({error: "Email or Password is incorrect"})
+            return res.status(400).json({message: "Email or Password is incorrect"})
         }
 
         //compare passwords
         const valid = await validatePassword(body.password, user.password)
         if (!valid) {
-            return res.status(400).json({error: "Email or Password is incorrect"})
+            return res.status(400).json({message: "Email or Password is incorrect"})
         }
 
         //create jwt
@@ -42,7 +42,7 @@ router.post('/', async (req, res) => {
         })
         
     } catch (error) {
-        res.status(500).json({error: "Internal Server Error"})
+        res.status(500).json({message: "Internal Server Error"})
     }
     
 })
