@@ -18,22 +18,22 @@ mongoose.connect(
         useUnifiedTopology: true,
         useCreateIndex: true
     },
-    (error) =>{
-        if (error) console.error(error);
+    // (error) =>{
+    //     if (error) console.error(error);
         
-        const dbStatus = mongoose.connection.readyState;
-        switch(dbStatus){
-            case 0:
-                console.log("Database disconected!");
-                break;
-            case 1:
-                console.log("Database Connected!");
-                break;
-            default:
-                console.log("Connecting to database...");
-                break;
-        };
-    }
+    //     const dbStatus = mongoose.connection.readyState;
+    //     switch(dbStatus){
+    //         case 0:
+    //             console.log("Database disconected!");
+    //             break;
+    //         case 1:
+    //             console.log("Database Connected!");
+    //             break;
+    //         default:
+    //             console.log("Connecting to database...");
+    //             break;
+    //     };
+    // }
 );
 
 
@@ -70,4 +70,4 @@ app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, 'build', 'index.html'))
 })
 
-app.listen(PORT, () => {console.log('Server started...')});
+app.listen(PORT);
