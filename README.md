@@ -1,7 +1,8 @@
 # Url-Shortening-Service
 
-Creating the backend of a **URL SHORTENER** that takes urls and gives users shortened versions for easier use.
+**URL SHORTENER** that takes urls and gives users shortened versions for easier use.
 The shortened urls redirect to the original __long url__ when accessed through a browser.
+Built with the MERN stack. MongoDb, Node.js, React and Express.
 
 To run this project locally:
 
