@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 const bodyParser = require('body-parser')
 const cors = require('cors')
+const path = require('path')
 
 const apiRoute = require('./routes/apiRoutes/Api')
 const redirectRoute = require('./routes/Redirect')
@@ -42,6 +43,7 @@ const PORT = process.env.PORT || 5000;
 
 //middleware
 app.use(cors())
+app.use(express.static(path.join(__dirname, 'build')))
 app.use(bodyParser.json())
 
 //routes

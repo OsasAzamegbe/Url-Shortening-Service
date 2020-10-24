@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const UrlModel = require('../models/Url')
+const path = require('path')
 
 
 router.get('/:key', async (req, res) => {
@@ -17,7 +18,7 @@ router.get('/:key', async (req, res) => {
 })
 
 router.get('/', (req, res) => {
-    res.send("Welcome to the home page")
+    res.sendFile(path.join(__dirname, '../', 'build', 'index.html'))
 })
 
 
