@@ -47,6 +47,10 @@ app.use(express.static(path.join(__dirname, 'build')))
 app.use(bodyParser.json())
 
 //routes
+app.get('/app', (req, res) => {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'))
+})
+
 app.get('/:key', async (req, res) => {
     const key = req.params.key
     
