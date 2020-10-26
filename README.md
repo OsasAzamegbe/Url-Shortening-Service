@@ -1,8 +1,8 @@
 # Url-Shortening-Service
 
-**URL SHORTENER** that takes urls and gives users shortened versions for easier use.
-The shortened urls redirect to the original __long url__ when accessed through a browser.
-Built with the MERN stack. MongoDb, Node.js, React and Express.
+**URL SHORTENER** that takes URLs and gives users shortened versions for easier use.
+The shortened URLs redirect to the original __long URL__ when accessed through a browser.
+Built with the MERN stack. MongoDB, Node.js, React and Express. Deplyed to Heroku with the live version available at https://sh-orten.herokuapp.com/.
 
 To run this project locally:
 
